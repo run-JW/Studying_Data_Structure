@@ -1,4 +1,4 @@
-class Structure {
+class ADT {
     search(list, key) { throw new Error("Abstract method"); }
 
     insert(list, element) { throw new Error("Abstract method"); }
@@ -11,7 +11,7 @@ class Node {
     }
 }
 
-class SinglyLinkedList extends Structure {
+class SinglyLinkedList extends ADT {
     constructor() {
         super();
         this.count = 0;
