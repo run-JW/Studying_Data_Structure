@@ -16,20 +16,22 @@ class SinglyLinkedList extends ADT {
         super();
         this.count = 0;
         this.head = null;
-        this.tail = null; 
     }
 
     get size() {
         return this.count;
     }
 
-    insert(value) {
+    push(element) {
+        const node = new Node(element);
         if (this.head === null) {
-            this.head = new Node(value);
-            this.tail = this.head;
+            this.head = node;
         } else {
-            this.tail.next = new Node(value);
-            this.tail = this.tail.next;
+            let current = this.head;
+            for (let i = 0; i < this.count - 1 && current !== null; i++) {
+                current = current.next;
+            }
+            current.next = node;
         }
         this.count++;
     }
